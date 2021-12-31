@@ -1,4 +1,4 @@
-#bsf-accounts-service
+# bsf-accounts-service
 is a Spring boot Service with Java 11 which is designed to transfer amount between the accounts and retrieving account by number
 ## Workflow
  * API to transfer money amount from account to another
@@ -36,4 +36,6 @@ is a Spring boot Service with Java 11 which is designed to transfer amount betwe
           "bankName": "ADCB",
           "balance": 23000
         }
- 
+ ## URLs
+ Swagger URL: http://localhost:8080/v1/swagger-ui/index.html
+ H2 console URL : http://localhost:8080/v1/h2
