@@ -1,0 +1,26 @@
+server:
+  servlet.context-path: /v1
+spring:
+  application:
+    name: bsf-accounts-service
+  datasource:
+    url: jdbc:h2:mem:accountsdb;MODE=MySQL;DB_CLOSE_DELAY=-1;IGNORECASE=TRUE;
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+  h2:
+    console:
+      path: /h2
+      enabled: true
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
