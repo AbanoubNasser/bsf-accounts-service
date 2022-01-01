@@ -13,8 +13,9 @@ is a Spring boot Service with Java 11 which is designed to transfer amount betwe
         		sdk install java 11.0.11.j9-adpt
         		java -version
  * Go to the project root path and run the following command to compile and run project
-      mvn -N io.takari:maven:wrapper
-     ./mvnw package && java -jar target/bsf-accounts-service-0.0.1-SNAPSHOT.jar
+       
+       mvn -N io.takari:maven:wrapper
+       ./mvnw package && java -jar target/bsf-accounts-service-0.0.1-SNAPSHOT.jar
  * bsf-accounts-service can be build using docker to run it , go to the project root path and run the following command
 
        mvn clean install
