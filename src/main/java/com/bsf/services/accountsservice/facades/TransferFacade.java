@@ -6,6 +6,7 @@ import com.bsf.services.accountsservice.model.Account;
 import com.bsf.services.accountsservice.model.Transaction;
 import com.bsf.services.accountsservice.repositories.AccountRepository;
 import com.bsf.services.accountsservice.repositories.TransactionRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
@@ -15,6 +16,7 @@ import javax.transaction.Transactional;
  */
 @Component
 @Transactional
+@Slf4j
 public class TransferFacade {
 
     private final AccountRepository accountRepository;
@@ -50,7 +52,6 @@ public class TransferFacade {
     }
 
     private void generateTransferTransactions(final Account fromAccount, final Account toAccount, final double amount) {
-
         Transaction fromAccountTX = new Transaction();
         fromAccountTX.setAccount(fromAccount);
         fromAccountTX.setAmount(amount * -1);

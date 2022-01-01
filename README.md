@@ -37,5 +37,7 @@ is a Spring boot Service with Java 11 which is designed to transfer amount betwe
           "balance": 23000
         }
  ## URLs
- Swagger URL: http://localhost:8080/v1/swagger-ui/index.html
- H2 console URL : http://localhost:8080/v1/h2
+ * Swagger URL: http://localhost:8080/v1/swagger-ui/index.html
+ * H2 console URL : http://localhost:8080/v1/h2
+ ## Test coverage
+ * bsf- accounts service has a jacoco plugin for test cases and estimates it about 90%
