@@ -36,15 +36,20 @@ public class TransferFacade {
      * @param transferRequest
      */
     public void processTransfer(final TransferRequest transferRequest) {
+        log.info("Start transfer process ....");
         final Account fromAccount = retrieveAccount(transferRequest.getFromAccount());
         final Account toAccount = retrieveAccount(transferRequest.getToAccount());
         synchronized (fromAccount) {
             synchronized (toAccount) {
                 if (Double.compare(transferRequest.getAmount(), fromAccount.getBalance()) < 0) {
+                    log.info("start updating accounts  balances");
                     accountRepository.updateAccountBalance(transferRequest.getAmount() * -1, fromAccount.getNumber());
                     accountRepository.updateAccountBalance(transferRequest.getAmount(), toAccount.getNumber());
+                    log.info("start generating accounts  transactions");
                     generateTransferTransactions(fromAccount, toAccount, transferRequest.getAmount());
+                    log.info("Transfer process has done successfully");
                 } else {
+                    log.error("No enough balance to process transfer");
                     throw ServiceError.NO_ENOUGH_BALANCE_ERROR.buildExcpetion();
                 }
             }
